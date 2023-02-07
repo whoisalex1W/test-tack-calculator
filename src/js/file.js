@@ -35,16 +35,18 @@ function changeData() {
         prices[index].innerHTML = sum2 <= 10 ? `${sum2}` : "10.00";
         break;
       case 2:
-        if(storageRange.value > 75) {
+        if(storageRange.value >= 75) {
           storageValue = document.getElementById("scaleway-radio-multi").checked
           ? document.getElementById("scaleway-radio-multi").value
           : document.getElementById("scaleway-radio-single").value;
         }
-        transferValue = transferRange.value <= 75 ? 0 : 0.02;
+        if(transferRange.value >= 75) {
+          transferValue = 0.02;
+        }
         
         let sum3 =
           (storageRange.value * storageValue + transferRange.value * transferValue);
-        sum3 = (sum3 - 100 * storageValue).toFixed(2);
+        sum3 = (sum3 - (75 * storageValue + 75 * transferValue)).toFixed(2);
         prices[index].innerHTML = sum3 <= 0 ? "0" : `${sum3}`;
         break;
       case 3:
