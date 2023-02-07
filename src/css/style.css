@@ -76,6 +76,10 @@
   gap: 10px;
 }
 
+.under-range__price::after {
+  content: "$";
+}
+
 .under-range:not(:last-child) {
   padding-bottom: 20px;
 }
