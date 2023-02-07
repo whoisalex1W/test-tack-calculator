@@ -1,0 +1,162 @@
+.container {
+  height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-container {
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 20px;
+  max-width: 800px;
+}
+
+.input-range {
+  display: flex;
+  justify-content: space-around;
+}
+
+.range {
+  height: 20px;
+  width: 0px;
+}
+
+.range-blocks {
+  min-width: 450px;
+  padding: 10px;
+  background-image: url("../img/price-background.jpg");
+  background-color: lightblue;
+  border-radius: 10px;
+
+}
+
+.providers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.providers img {
+  height: 30px;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.providers div {
+  display: flex;
+}
+
+.providers form {
+  margin: 0;
+  font-size: 8px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.providers input {
+  margin: 0;
+}
+
+.providers label {
+  margin: 0 10px 0 0;
+}
+
+.switch-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pre-range {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.under-range:not(:last-child) {
+  padding-bottom: 20px;
+}
+
+.under-range .range {
+  display: inline-block;
+  background-color: gray;
+}
+
+form {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+#input-volume,
+#input-transfer {
+  width: 35px;
+  border: none;
+}
+
+#volume,
+#transfer {
+  position: relative;
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+#volume::before,
+#transfer::before {
+  position: absolute;
+  top: 15px;
+  content: "0";
+}
+
+#volume::after,
+#transfer::after {
+  position: absolute;
+  top: 15px;
+  left: 120px;
+  content: "1000";
+}
+
+@media (max-width: 678px) {
+  .inner-container {
+    height: 680px;
+    display: flex;
+  }
+
+  .input-range {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pre-range,
+  .inner-container {
+    flex-direction: column-reverse;
+  }
+
+  .providers {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0px;
+  }
+  .range-blocks {
+    transform: rotate(270deg);
+    margin-bottom: 15px;
+  }
+
+  .range {
+    height: 35px;
+  }
+
+  .under-range:not(:last-child) {
+    padding-bottom: 80px;
+  }
+}

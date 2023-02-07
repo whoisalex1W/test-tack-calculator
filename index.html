@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inner-container">
+        <form class="input-range">
+          <div class="volume-range">
+            <label>
+              Storage:
+              <input
+                oninput="changeRange('volume'), changeData()"
+                type="text"
+                id="input-volume"
+              />
+            </label>
+            <input
+              oninput="changeData()"
+              type="range"
+              id="volume"
+              name="volume"
+              min="0"
+              max="1000"
+              value="0"
+            />
+          </div>
+
+          <div class="transfer-range">
+            <label>
+              Transfer:
+              <input
+                onchange="changeRange('transfer'),changeData()"
+                type="text"
+                id="input-transfer"
+              />
+            </label>
+            <input
+              oninput="changeData()"
+              type="range"
+              id="transfer"
+              name="transfer"
+              min="0"
+              max="1000"
+              value="0"
+            />
+          </div>
+        </form>
+        <div class="pre-range">
+          <div class="providers">
+            <div>backblaze<img src="./src/img/backblaze.png" /></div>
+            <div class="switch-option">
+              <div class="logo">
+                <span>bunny</span>
+                <img
+                  onclick="changeSubscription('bunny')"
+                  src="./src/img/bunny.png"
+                />
+              </div>
+
+              <form id="bunny-form" onchange="changeData()">
+                <input
+                  type="radio"
+                  name="bunny-price"
+                  value="0.01"
+                  id="bunny-radio-hdd"
+                  checked
+                />
+                <label for="bunny-radio1">HDD</label>
+                <input
+                  type="radio"
+                  name="bunny-price"
+                  value="0.02"
+                  id="bunny-radio-ssd"
+                />
+                <label for="bunny-radio2">SSD</label>
+              </form>
+            </div>
+            <div class="switch-option">
+              <div class="logo">
+                scaleway
+                <img
+                  onclick="changeSubscription('scaleway')"
+                  src="./src/img/scaleway.png"
+                />
+              </div>
+
+              <form id="scaleway-form" onchange="changeData()">
+                <input
+                  type="radio"
+                  name="scaleway-price"
+                  value="0.06"
+                  id="scaleway-radio-multi"
+                  checked
+                />
+                <label for="scaleway-radio-multi">multi</label>
+                <input
+                  type="radio"
+                  name="scaleway-price"
+                  value="0.03"
+                  id="scaleway-radio-single"
+                />
+                <label for="scaleway-radio-single">single</label>
+              </form>
+            </div>
+            <div>vultr<img src="./src/img/vultr.png" /></div>
+          </div>
+          <div class="range-blocks">
+            <div class="under-range">
+              <div id="range1" class="range"></div>
+              <span class="under-range__price">0$</span>
+            </div>
+            <div class="under-range">
+              <div id="range2" class="range"></div>
+              <span class="under-range__price">0$</span>
+            </div>
+            <div class="under-range">
+              <div id="range3" class="range"></div>
+              <span class="under-range__price">0$</span>
+            </div>
+            <div class="under-range">
+              <div id="range4" class="range"></div>
+              <span class="under-range__price">0$</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./src/js/file.js"></script>
+  </body>
+</html>
